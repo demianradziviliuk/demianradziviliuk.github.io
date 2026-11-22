@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дем'ян Радзівілюк — Актор кіно та театру, Диктор, Брендголос</title>
+    <meta name="description" content="Офіційна сторінка-візитівка Дем'яна Радзівілюка. Професійний актор кіно і театру, артист озвучування, ексклюзивний брендголос телеканалу СТБ.">
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('DOMContentLoaded', function() {
+            if (!window.location.hash) {
+                window.scrollTo(0, 0);
+            }
+        });
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royal: {
+                            950: '#050b1a',
+                            900: '#0a1633',
+                            800: '#10224d',
+                            700: '#18316e',
+                            gold: '#d4af37',
+                            goldLight: '#f5d77f',
+                            muted: '#94a3b8'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050b1a;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(16, 34, 77, 0.55);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.16);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #b0891c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-royal-gold selection:text-royal-950">
+
+    <!-- Навігація -->
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-royal-gold/20">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2 xl:gap-4">
+            
+            <!-- Ліва група: Ім'я + Кнопка завантаження готового Casting Card -->
+            <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+                <a href="#top" class="font-serif text-sm sm:text-base xl:text-lg font-bold tracking-wider uppercase text-white whitespace-nowrap shrink-0">
+                    <span data-i18n="brand_first">Дем'ян</span> <span class="text-royal-gold" data-i18n="brand_last">Радзівілюк</span>
+                </a>
+
+                <a href="Casting%20Card%20Demian%20Radziviliuk.pdf" download="Casting Card Demian Radziviliuk.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-royal-gold text-royal-950 text-[11px] xl:text-xs font-bold hover:bg-royal-goldLight transition shadow-md shadow-amber-500/15 whitespace-nowrap shrink-0" title="Download Casting Card (PDF)">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>Casting Card / One-Sheet</span>
+                </a>
+            </div>
+
+            <!-- Центральне меню -->
+            <nav class="hidden lg:flex items-center space-x-3 xl:space-x-5 text-xs xl:text-sm font-medium text-slate-200 whitespace-nowrap">
+                <a href="#params" class="hover:text-royal-gold transition" data-i18n="nav_params">Параметри</a>
+                <a href="#gallery" class="hover:text-royal-gold transition" data-i18n="nav_gallery">Фото</a>
+                <a href="#media" class="hover:text-royal-gold transition" data-i18n="nav_media">Портфоліо та ЗСУ</a>
+                <a href="#filmography" class="hover:text-royal-gold transition" data-i18n="nav_filmography">Фільмографія</a>
+                <a href="#bio" class="hover:text-royal-gold transition" data-i18n="nav_bio">Біографія</a>
+            </nav>
+
+            <!-- Права група: Перемикач мов + Соцмережі + Контакти + Мобільне меню -->
+            <div class="flex items-center gap-1.5 xl:gap-2.5 shrink-0">
+                <div class="inline-flex items-center p-0.5 rounded-full bg-royal-950/90 border border-royal-gold/30 shrink-0" role="group" aria-label="Language switcher">
+                    <button type="button" id="btn-lang-uk" onclick="setLanguage('uk')" class="px-2 py-1 rounded-full text-xs font-bold transition bg-royal-gold text-royal-950">
+                        UA
+                    </button>
+                    <button type="button" id="btn-lang-en" onclick="setLanguage('en')" class="px-2 py-1 rounded-full text-xs font-bold transition text-slate-300 hover:text-white">
+                        EN
+                    </button>
+                </div>
+
+                <a href="#social-links" class="hidden md:inline-flex px-2.5 xl:px-3 py-1.5 rounded-full bg-royal-900/90 hover:bg-royal-800 border border-royal-gold/40 text-royal-gold text-xs font-semibold transition whitespace-nowrap shrink-0" data-i18n="nav_socials">
+                    Соцмережі
+                </a>
+
+                <a href="#contacts" class="hidden sm:inline-flex px-2.5 xl:px-3 py-1.5 rounded-full bg-royal-800 hover:bg-royal-700 border border-royal-gold/40 text-white text-xs font-semibold transition whitespace-nowrap shrink-0" data-i18n="nav_contacts">
+                    Контакти
+                </a>
+
+                <button type="button" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-200 hover:text-royal-gold hover:bg-royal-800/70 transition shrink-0" aria-label="Menu">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Висувне меню для мобільних екранів і планшетів (<1024px) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-royal-950/95 border-b border-royal-gold/20 px-4 py-4 space-y-2.5 text-sm font-medium text-slate-200">
+            <a href="#params" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-royal-gold" data-i18n="nav_params">Параметри</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-royal-gold" data-i18n="nav_gallery">Фото</a>
+            <a href="#media" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-royal-gold" data-i18n="nav_media">Портфоліо та ЗСУ</a>
+            <a href="#filmography" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-royal-gold" data-i18n="nav_filmography">Фільмографія</a>
+            <a href="#bio" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-royal-gold" data-i18n="nav_bio">Біографія</a>
+            <a href="#social-links" onclick="toggleMobileMenu()" class="block py-1.5 text-royal-gold font-semibold" data-i18n="nav_socials">Соцмережі</a>
+            <a href="#contacts" onclick="toggleMobileMenu()" class="block py-1.5 text-white font-semibold" data-i18n="nav_contacts">Контакти</a>
+        </div>
+    </header>
+
+    <!-- Головний екран (Hero) -->
+    <section id="top" class="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-700/25 via-royal-950 to-royal-950 -z-10"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-800/80 border border-royal-gold/30 text-xs uppercase tracking-widest text-royal-gold">
+                    <span data-i18n="hero_location">Київ, Україна</span>
+                    <span>•</span>
+                    <span data-i18n="hero_role_tag">Актор / Диктор</span>
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                    <span data-i18n="hero_first_name">Дем'ян</span> <br>
+                    <span class="gold-gradient-text" data-i18n="hero_last_name">Радзівілюк</span>
+                </h1>
+                
+                <p class="text-lg sm:text-xl text-slate-200 font-light max-w-2xl leading-relaxed" data-i18n="hero_subtitle">
+                    Професійний актор кіно та театру, артист озвучування й дубляжу. З 2002 року і дотепер — ексклюзивний брендовий голос телеканалу <strong class="text-white font-medium">СТБ</strong> та головних флагманських шоу країни ("Х-Фактор", "Україна має талант", "Танцюють всі!", "Зважені та щасливі"...).
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#media" class="px-6 py-3.5 rounded-lg bg-royal-gold text-royal-950 font-semibold hover:bg-royal-goldLight transition flex items-center gap-2 shadow-lg shadow-amber-500/15">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <span data-i18n="hero_btn_demo">Слухати приклади робіт</span>
+                    </a>
+                    <a href="#zsu-pro-bono" class="px-6 py-3.5 rounded-lg bg-royal-800/80 hover:bg-royal-700 border border-royal-gold/40 text-white font-medium transition flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-royal-gold animate-pulse"></span>
+                        <span data-i18n="hero_btn_zsu">Pro Bono для ЗСУ та волонтерів</span>
+                    </a>
+                </div>
+
+                <!-- Швидкі соцмережі -->
+                <div class="pt-4 flex flex-wrap items-center gap-5 text-slate-300 text-sm">
+                    <a href="https://t.me/DemianRadziviliuk" target="_blank" rel="noopener" class="text-royal-gold hover:underline font-medium">Telegram</a>
+                    <a href="https://wa.me/380501337496" target="_blank" rel="noopener" class="text-royal-gold hover:underline font-medium">WhatsApp</a>
+                    <a href="https://www.youtube.com/c/DemyanRadzivilyukBrandVoiceSTB" target="_blank" rel="noopener" class="hover:text-royal-gold transition">YouTube</a>
+                    <a href="https://soundcloud.com/demyan-radzivilyuk/taras-shevchenko-mertvim-zhivim-nenarodzhenim-zemlyakam-mom-v-ukran-ne-v-ukran" target="_blank" rel="noopener" class="hover:text-royal-gold transition">SoundCloud</a>
+                    <a href="https://www.instagram.com/radziviliuk.demian/" target="_blank" rel="noopener" class="hover:text-royal-gold transition">Instagram</a>
+                    <a href="https://www.facebook.com/radziviliuk.d" target="_blank" rel="noopener" class="hover:text-royal-gold transition">Facebook</a>
+                    <a href="https://www.linkedin.com/in/radziviliukd/" target="_blank" rel="noopener" class="hover:text-royal-gold transition">LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Блок для головного фото -->
+            <div class="lg:col-span-5">
+                <div class="relative mx-auto max-w-sm lg:max-w-none">
+                    <div class="absolute -inset-1.5 rounded-2xl bg-gradient-to-tr from-royal-gold/45 via-blue-500/20 to-transparent blur-lg opacity-75"></div>
+                    <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-royal-900 border border-royal-gold/30 flex flex-col items-center justify-center text-center p-6">
+                        <img id="main-portrait-img" src="photo.jpg" alt="Demian Radziviliuk — Actor, Voiceover Artist" class="w-full h-full object-cover object-top" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden flex-col items-center justify-center h-full text-slate-300 space-y-3">
+                            <svg class="w-12 h-12 text-royal-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <p class="text-sm font-medium text-white" data-i18n="photo_placeholder_title">Місце для основного портрету</p>
+                            <p class="text-xs text-slate-400" data-i18n="photo_placeholder_desc">Покладіть ваше фото поруч із файлом сайту та назвіть його <code class="text-royal-gold">photo.jpg</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Компактна картка параметрів для кастинг-директорів -->
+    <section id="params" class="py-12 border-y border-royal-gold/15 bg-royal-900/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-royal-gold font-semibold">Casting Spec Card</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1" data-i18n="params_title">Акторські параметри та навички</h2>
+                </div>
+                <p class="text-sm text-slate-300 mt-2 md:mt-0" data-i18n="params_subtitle">Актуальні дані для кастинг-директорів та продакшнів</p>
+            </div>
+
+            <!-- Антропометрія -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-4">
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-xs text-slate-400 uppercase tracking-wider" data-i18n="param_dob_label">Дата народження</div>
+                    <div class="text-base sm:text-lg font-semibold text-white mt-1">24.05.1979</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-xs text-slate-400 uppercase tracking-wider" data-i18n="param_height_label">Зріст</div>
+                    <div class="text-base sm:text-lg font-semibold text-white mt-1" data-i18n="param_height_val">174 см</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-xs text-slate-400 uppercase tracking-wider" data-i18n="param_weight_label">Вага</div>
+                    <div class="text-base sm:text-lg font-semibold text-white mt-1" data-i18n="param_weight_val">78 кг</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-xs text-slate-400 uppercase tracking-wider" data-i18n="param_eyes_label">Очі</div>
+                    <div class="text-base sm:text-lg font-semibold text-white mt-1" data-i18n="param_eyes_val">Карі</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl col-span-2 sm:col-span-1">
+                    <div class="text-xs text-slate-400 uppercase tracking-wider" data-i18n="param_hair_label">Волосся</div>
+                    <div class="text-base sm:text-lg font-semibold text-white mt-1" data-i18n="param_hair_val">Шатен з сивиною</div>
+                </div>
+            </div>
+
+            <!-- Володіння мовами з важливою приміткою -->
+            <div class="glass-card p-5 rounded-xl mb-4 border-l-4 border-l-royal-gold">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-royal-gold font-semibold block mb-2" data-i18n="lang_section_label">Володіння мовами:</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-royal-gold/20 border border-royal-gold/50 text-sm text-white font-medium" data-i18n="lang_uk">Українська — рідна</span>
+                            <span class="px-3 py-1 rounded-full bg-royal-950/60 border border-white/10 text-sm text-slate-200" data-i18n="lang_en">Англійська — розмовна</span>
+                            <span class="px-3 py-1 rounded-full bg-royal-950/60 border border-white/10 text-sm text-slate-200" data-i18n="lang_ru">Російська — досконало <span class="text-royal-gold">*</span></span>
+                        </div>
+                    </div>
+                    <div class="lg:max-w-xl bg-royal-950/80 border border-royal-gold/30 rounded-lg p-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed" data-i18n="lang_ru_note">
+                        <span class="text-royal-gold font-semibold uppercase tracking-wider mr-1">* Примітка щодо мови:</span>
+                        Робота російською мовою можлива <strong class="text-white underline decoration-royal-gold/70 underline-offset-4">виключно для створення спеціальних характерних образів (ролі росіян)</strong> в українських чи міжнародних проєктах — <strong class="text-white">без участі в російськомовних проєктах для російськомовної аудиторії</strong>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Спеціальні навички -->
+            <div class="glass-card p-5 rounded-xl flex flex-wrap items-center gap-3">
+                <span class="text-xs uppercase tracking-wider text-royal-gold font-semibold mr-2" data-i18n="skills_label">Спеціальні навички:</span>
+                <span class="px-3 py-1 rounded-full bg-royal-950/60 border border-white/10 text-sm text-slate-200" data-i18n="skill_driving">Водіння авто (механіка / автомат, кат. «B»)</span>
+                <span class="px-3 py-1 rounded-full bg-royal-950/60 border border-white/10 text-sm text-slate-200" data-i18n="skill_combat">Сценічний бій</span>
+                <span class="px-3 py-1 rounded-full bg-royal-950/60 border border-white/10 text-sm text-slate-200" data-i18n="skill_fencing">Фехтування</span>
+                <span class="px-3 py-1 rounded-full bg-royal-950/60 border border-white/10 text-sm text-slate-200" data-i18n="skill_piano">Гра на фортепіано</span>
+                <span class="px-3 py-1 rounded-full bg-royal-950/60 border border-white/10 text-sm text-slate-200" data-i18n="skill_swimming">Плавання</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фотогалерея: Хедшоти та кадри зі зйомок -->
+    <section id="gallery" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-royal-gold font-semibold block mb-2.5" data-i18n="gallery_kicker">Акторське портфоліо</span>
+                    <a href="showcase.html?section=photos" class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-royal-gold text-royal-950 font-serif text-xl sm:text-2xl lg:text-3xl font-bold hover:bg-royal-goldLight transition shadow-lg shadow-amber-500/20">
+                        <span data-i18n="gallery_title">Хедшоти та кадри зі зйомок</span>
+                        <svg class="w-6 h-6 shrink-0 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+                <p class="text-sm text-slate-300" data-i18n="gallery_hint">Натисніть на кнопку вище, щоб відкрити повну галерею світлин на сайті, або оберіть фото нижче</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Фото 1 -->
+                <div onclick="openLightbox('gallery-1.jpg', 'gal_cap_1')" class="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-royal-900 border border-royal-gold/25 cursor-pointer">
+                    <img id="gal-img-1" src="gallery-1.jpg" alt="Demian Radziviliuk — Headshot 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden flex-col items-center justify-center h-full text-center p-6 text-slate-300 space-y-2">
+                        <span class="text-xs uppercase tracking-wider text-royal-gold">Headshot 01</span>
+                        <p class="text-sm text-white font-medium" data-i18n="gal_ph_1">Великий план (нейтральний)</p>
+                        <p class="text-xs text-slate-400"><code class="text-royal-gold">gallery-1.jpg</code></p>
+                    </div>
+                    <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-royal-950/90 via-royal-950/50 to-transparent opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-xs text-royal-gold uppercase tracking-wider font-medium" data-i18n="gal_ov_1">Хедшот • Великий план</span>
+                    </div>
+                </div>
+
+                <!-- Фото 2 -->
+                <div onclick="openLightbox('gallery-2.jpg', 'gal_cap_2')" class="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-royal-900 border border-royal-gold/25 cursor-pointer">
+                    <img id="gal-img-2" src="gallery-2.jpg" alt="Demian Radziviliuk — Headshot 2" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden flex-col items-center justify-center h-full text-center p-6 text-slate-300 space-y-2">
+                        <span class="text-xs uppercase tracking-wider text-royal-gold">Headshot 02</span>
+                        <p class="text-sm text-white font-medium" data-i18n="gal_ph_2">Діловий / статусний образ</p>
+                        <p class="text-xs text-slate-400"><code class="text-royal-gold">gallery-2.jpg</code></p>
+                    </div>
+                    <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-royal-950/90 via-royal-950/50 to-transparent opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-xs text-royal-gold uppercase tracking-wider font-medium" data-i18n="gal_ov_2">Типаж • Бізнес / Керівник</span>
+                    </div>
+                </div>
+
+                <!-- Фото 3 -->
+                <div onclick="openLightbox('gallery-3.jpg', 'gal_cap_3')" class="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-royal-900 border border-royal-gold/25 cursor-pointer">
+                    <img id="gal-img-3" src="gallery-3.jpg" alt="Demian Radziviliuk — Headshot 3" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden flex-col items-center justify-center h-full text-center p-6 text-slate-300 space-y-2">
+                        <span class="text-xs uppercase tracking-wider text-royal-gold">Headshot 03</span>
+                        <p class="text-sm text-white font-medium" data-i18n="gal_ph_3">Характерний / драматичний образ</p>
+                        <p class="text-xs text-slate-400"><code class="text-royal-gold">gallery-3.jpg</code></p>
+                    </div>
+                    <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-royal-950/90 via-royal-950/50 to-transparent opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-xs text-royal-gold uppercase tracking-wider font-medium" data-i18n="gal_ov_3">Типаж • Драма / Характер</span>
+                    </div>
+                </div>
+
+                <!-- Фото 4 -->
+                <div onclick="openLightbox('gallery-4.jpg', 'gal_cap_4')" class="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-royal-900 border border-royal-gold/25 cursor-pointer">
+                    <img src="gallery-4.jpg" alt="Demian Radziviliuk — On Set" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden flex-col items-center justify-center h-full text-center p-6 text-slate-300 space-y-2">
+                        <span class="text-xs uppercase tracking-wider text-royal-gold">On Set 04</span>
+                        <p class="text-sm text-white font-medium" data-i18n="gal_ph_4">Кадр зі зйомок у кіно</p>
+                        <p class="text-xs text-slate-400"><code class="text-royal-gold">gallery-4.jpg</code></p>
+                    </div>
+                    <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-royal-950/90 via-royal-950/50 to-transparent opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-xs text-royal-gold uppercase tracking-wider font-medium" data-i18n="gal_ov_4">Знімальний майданчик</span>
+                    </div>
+                </div>
+
+                <!-- Фото 5 -->
+                <div onclick="openLightbox('gallery-5.jpg', 'gal_cap_5')" class="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-royal-900 border border-royal-gold/25 cursor-pointer">
+                    <img src="gallery-5.jpg" alt="Demian Radziviliuk — Voiceover Studio" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden flex-col items-center justify-center h-full text-center p-6 text-slate-300 space-y-2">
+                        <span class="text-xs uppercase tracking-wider text-royal-gold">Studio 05</span>
+                        <p class="text-sm text-white font-medium" data-i18n="gal_ph_5">Озвучування та дубляж</p>
+                        <p class="text-xs text-slate-400"><code class="text-royal-gold">gallery-5.jpg</code></p>
+                    </div>
+                    <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-royal-950/90 via-royal-950/50 to-transparent opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-xs text-royal-gold uppercase tracking-wider font-medium" data-i18n="gal_ov_5">Студія • Озвучування</span>
+                    </div>
+                </div>
+
+                <!-- Фото 6 -->
+                <div onclick="openLightbox('gallery-6.jpg', 'gal_cap_6')" class="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-royal-900 border border-royal-gold/25 cursor-pointer">
+                    <img src="gallery-6.jpg" alt="Demian Radziviliuk — Full Body" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden flex-col items-center justify-center h-full text-center p-6 text-slate-300 space-y-2">
+                        <span class="text-xs uppercase tracking-wider text-royal-gold">Full Body 06</span>
+                        <p class="text-sm text-white font-medium" data-i18n="gal_ph_6">Повний зріст / Smart Casual</p>
+                        <p class="text-xs text-slate-400"><code class="text-royal-gold">gallery-6.jpg</code></p>
+                    </div>
+                    <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-royal-950/90 via-royal-950/50 to-transparent opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-xs text-royal-gold uppercase tracking-wider font-medium" data-i18n="gal_ov_6">Повний зріст • Smart Casual</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Медіаблок: Портфоліо професійного актора. Озвучування і дубляж -->
+    <section id="media" class="py-20 bg-royal-900/60 border-y border-royal-gold/15">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-10" data-i18n="media_title">Портфоліо професійного актора. Озвучування і дубляж</h2>
+
+            <!-- 5 тематичних блоків робіт -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                
+                <!-- Блок 1: ЗСУ та волонтерські проєкти -->
+                <div id="zsu-pro-bono" class="glass-card rounded-2xl p-6 sm:p-7 border-2 border-royal-gold/60 bg-gradient-to-br from-royal-800/90 to-royal-950/90 flex flex-col justify-between shadow-xl shadow-blue-950/50">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-3 py-1 rounded-full bg-royal-gold text-royal-950 text-xs font-bold uppercase tracking-wider" data-i18n="cat_zsu_badge">PRO BONO • БЕЗКОШТОВНО</span>
+                            <span class="text-xs text-royal-gold font-mono">01 / ЗСУ</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2" data-i18n="cat_zsu_title">Озвучування для ЗСУ та волонтерів</h3>
+                        <p class="text-sm text-slate-200 leading-relaxed mb-4" data-i18n="cat_zsu_desc">
+                            Озвучування роликів для підрозділів Збройних Сил України, благодійних фондів та волонтерських зборів виконую <strong class="text-royal-gold">абсолютно безкоштовно (Pro Bono)</strong>. Якщо ви готуєте відео для підтримки війська — сміливо звертайтеся по допомогу.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-royal-gold/20 flex flex-wrap items-center justify-between gap-3">
+                        <a href="showcase.html?section=zsu" class="px-5 py-2.5 rounded-xl bg-royal-gold text-royal-950 font-semibold text-sm hover:bg-royal-goldLight transition inline-flex items-center gap-2">
+                            <span data-i18n="cat_zsu_btn">Приклади робіт для ЗСУ</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                        <a href="https://t.me/DemianRadziviliuk" target="_blank" rel="noopener" class="text-xs text-royal-gold hover:underline font-semibold" data-i18n="cat_zsu_contact">Написати в Telegram →</a>
+                    </div>
+                </div>
+
+                <!-- Блок 2: Промо телеканалу СТБ -->
+                <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-royal-gold/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs uppercase tracking-widest text-royal-gold font-semibold" data-i18n="cat_stb_badge">Brand Voice STB</span>
+                            <span class="text-xs text-slate-400 font-mono">02 / TV PROMO</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2" data-i18n="cat_stb_title">Промо телеканалу СТБ</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4" data-i18n="cat_stb_desc">
+                            Фірмові анонси та проморолики головних національних телепроєктів («Україна має талант», «Зважені та щасливі», «Х-фактор», «МастерШеф» та ін.).
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10">
+                        <a href="showcase.html?section=stb" class="px-5 py-2.5 rounded-xl bg-royal-800 hover:bg-royal-700 border border-royal-gold/35 text-white font-medium text-sm transition inline-flex items-center gap-2">
+                            <span data-i18n="cat_stb_btn">Переглянути промо СТБ</span>
+                            <svg class="w-4 h-4 text-royal-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Блок 3: Комерційна реклама -->
+                <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-royal-gold/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs uppercase tracking-widest text-royal-gold font-semibold" data-i18n="cat_com_badge">Бренди та бізнес</span>
+                            <span class="text-xs text-slate-400 font-mono">03 / COMMERCIAL</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2" data-i18n="cat_com_title">Комерційна реклама</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4" data-i18n="cat_com_desc">
+                            Іміджеві та продуктові відеоролики для телебачення і діджитал-платформ.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10">
+                        <a href="showcase.html?section=commercial" class="px-5 py-2.5 rounded-xl bg-royal-800 hover:bg-royal-700 border border-royal-gold/35 text-white font-medium text-sm transition inline-flex items-center gap-2">
+                            <span data-i18n="cat_com_btn">Переглянути комерційну рекламу</span>
+                            <svg class="w-4 h-4 text-royal-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Блок 4: Соціальна реклама -->
+                <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-royal-gold/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs uppercase tracking-widest text-royal-gold font-semibold" data-i18n="cat_soc_badge">Суспільні проєкти</span>
+                            <span class="text-xs text-slate-400 font-mono">04 / SOCIAL</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2" data-i18n="cat_soc_title">Соціальна реклама</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4" data-i18n="cat_soc_desc">
+                            Державні інформаційні кампанії, гуманітарні ініціативи, культурні та соціально важливі відеопроєкти.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10">
+                        <a href="showcase.html?section=social" class="px-5 py-2.5 rounded-xl bg-royal-800 hover:bg-royal-700 border border-royal-gold/35 text-white font-medium text-sm transition inline-flex items-center gap-2">
+                            <span data-i18n="cat_soc_btn">Переглянути соціальну рекламу</span>
+                            <svg class="w-4 h-4 text-royal-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Блок 5: Озвучування програм -->
+                <div class="glass-card rounded-2xl p-6 sm:p-7 md:col-span-2 flex flex-col lg:flex-row lg:items-center justify-between gap-6 hover:border-royal-gold/50 transition">
+                    <div class="max-w-3xl">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-xs uppercase tracking-widest text-royal-gold font-semibold" data-i18n="cat_prog_badge">Телевізійні та документальні проєкти</span>
+                            <span class="text-xs text-slate-400 font-mono">05 / TV SHOWS</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2" data-i18n="cat_prog_title">Озвучування програм</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed" data-i18n="cat_prog_desc">
+                            Закадровий голос культових реаліті-шоу, документальних циклів та розважальних програм: "МастерШеф", "Танці з зірками (СТБ)", "Битва екстрасенсів", "Слідство ведуть екстрасенси", "Неймовірна правда про зірок (Перші сезони)", "У пошуках істини", "Документальний детектив", "Документальний блокбастер", "Звана вечеря", "Фермер шукає дружину", "Кулінарна династія", "Кохана, ми вбиваємо дітей", "Вагітна в 16", "Лід та полум'я", "Моя правда (Перші сезони)", "Правила життя", "Живе кіно" — у плейлисті на YouTube.
+                        </p>
+                    </div>
+                    <div class="shrink-0">
+                        <a href="https://www.youtube.com/playlist?list=PL5CFySYEeUjOUB2H272rEllCNRQ5EUt6n" target="_blank" rel="noopener" class="px-6 py-3 rounded-xl bg-royal-800 hover:bg-royal-700 border border-royal-gold/40 text-white font-semibold text-sm transition inline-flex items-center gap-2">
+                            <span data-i18n="cat_prog_btn">Дивитися плейлист програм</span>
+                            <svg class="w-4 h-4 text-royal-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Вбудований плеєр SoundCloud -->
+            <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+                <div>
+                    <div class="text-xs text-royal-gold uppercase tracking-wider font-semibold" data-i18n="audio_tag">Художнє читання / Голос</div>
+                    <h3 class="text-xl font-semibold text-white mt-1 mb-5" data-i18n="audio_title">Тарас Шевченко — «І мертвим, і живим, і ненарожденним...»</h3>
+                    
+                    <div class="rounded-xl overflow-hidden bg-royal-950 border border-royal-gold/25">
+                        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/demyan-radzivilyuk/taras-shevchenko-mertvim-zhivim-nenarodzhenim-zemlyakam-mom-v-ukran-ne-v-ukran&color=%23d4af37&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+                    </div>
+                </div>
+
+                <div class="mt-5 pt-4 border-t border-white/10 flex flex-wrap justify-between items-center gap-2">
+                    <span class="text-xs text-slate-300" data-i18n="audio_meta">Студійний запис • Українська мова</span>
+                    <a href="https://soundcloud.com/demyan-radzivilyuk/taras-shevchenko-mertvim-zhivim-nenarodzhenim-zemlyakam-mom-v-ukran-ne-v-ukran" target="_blank" rel="noopener" class="text-sm text-royal-gold hover:underline" data-i18n="audio_link">
+                        Відкрити у SoundCloud →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фільмографія -->
+    <section id="filmography" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <span class="text-xs uppercase tracking-widest text-royal-gold font-semibold" data-i18n="film_kicker">Кіно та серіали</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1 mb-10" data-i18n="film_title">Вибрана фільмографія</h2>
+
+            <div class="space-y-4">
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_1_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2023</span>
+                        <span class="text-white font-semibold text-lg">т/с «Жіночий лікар»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Павло</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400" data-i18n="film_1_right">Реж. П. Мащенко • «1+1 Україна»</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_2_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2023</span>
+                        <span class="text-white font-semibold text-lg">т/с «Коло омани»</span>
+                    </div>
+                    <div class="text-xs text-slate-400" data-i18n="film_2_right">Реж. О. Тіменко, Д. Лактіонов • «1+1 Україна»</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_3_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2021</span>
+                        <span class="text-white font-semibold text-lg">х/ф «Білий ворон»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Оператор «Горлівка-ТБ»</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400" data-i18n="film_3_right">Реж. Мар'ян Бушан • UM-Group</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_4_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2021</span>
+                        <span class="text-white font-semibold text-lg">т/с «Ангели-2»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Терорист Маркус</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400" data-i18n="film_4_right">Реж. Тарас Рибальченко • SFERA FILM</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_5_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2021</span>
+                        <span class="text-white font-semibold text-lg">т/с «Кріпосна 3»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Розпорядник балу</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400">STB, FILM.UA Group</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_6_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2021</span>
+                        <span class="text-white font-semibold text-lg">т/с «Пес-6» (серія «Вендетта»)</span>
+                    </div>
+                    <div class="text-xs text-slate-400" data-i18n="film_6_right">«Вікторія-універсал Продакшн» • ICTV</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_7_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2020</span>
+                        <span class="text-white font-semibold text-lg">т/с «Жіночий лікар 5»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Бізнесмен</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400" data-i18n="film_7_right">Реж. Павло Мащенко • FILM.UA</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_8_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2020</span>
+                        <span class="text-white font-semibold text-lg">т/с «Акушерка»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Анестезіолог</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400">StarLightProduction</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_9_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2019</span>
+                        <span class="text-white font-semibold text-lg">т/с «Мишоловка для кота»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Айтішник-хакер «Ботан»</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400">Studio «Kvartal-95»</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_10_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2019</span>
+                        <span class="text-white font-semibold text-lg">т/с «Папік»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Лікар</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400">Studio «Kvartal-95»</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_11_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2019</span>
+                        <span class="text-white font-semibold text-lg">т/с «Сидоренки-Сидоренки»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Ведучий підпільного аукціону</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400">IQ Production</div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-royal-gold/50 transition">
+                    <div data-i18n="film_12_left">
+                        <span class="text-royal-gold font-mono text-sm font-semibold mr-3">2018</span>
+                        <span class="text-white font-semibold text-lg">т/с «Кріпосна»</span>
+                        <span class="text-slate-300 text-sm block sm:inline sm:ml-2">— роль: <strong class="text-white font-medium">Розпорядник аукціону</strong></span>
+                    </div>
+                    <div class="text-xs text-slate-400">StarLight Films, Film.UA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Біографія та освіта -->
+    <section id="bio" class="py-20 bg-royal-900/60 border-t border-royal-gold/15">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <span class="text-xs uppercase tracking-widest text-royal-gold font-semibold" data-i18n="bio_kicker">Професійний шлях</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1 mb-8" data-i18n="bio_title">Освіта та Досвід</h2>
+
+            <div class="space-y-6 border-l-2 border-royal-gold/40 pl-6 ml-2">
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-royal-gold"></div>
+                    <div class="text-xs font-mono text-royal-gold" data-i18n="bio_1_date">2018 — дотепер</div>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="bio_1_title">Актор кіно та телесеріалів</h3>
+                    <p class="text-sm text-slate-300 mt-1" data-i18n="bio_1_desc">Активна робота у повнометражному кіно, телевізійних серіалах та національних рекламних кампаніях.</p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-royal-gold"></div>
+                    <div class="text-xs font-mono text-royal-gold">2018</div>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="bio_2_title">Майстер-клас Іванни Чаббак</h3>
+                    <p class="text-sm text-slate-300 mt-1" data-i18n="bio_2_desc">Інтенсив за технікою провідного голлівудського коуча («The Power of the Actor: The Chubbuck Technique»).</p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-royal-gold"></div>
+                    <div class="text-xs font-mono text-royal-gold" data-i18n="bio_3_date">2002 — дотепер</div>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="bio_3_title">Телеканал СТБ</h3>
+                    <p class="text-sm text-slate-300 mt-1" data-i18n="bio_3_desc">Ексклюзивний брендовий голос каналу, диктор промо та флагманських телевізійних шоу («Україна має талант», «Зважені та щасливі» та ін.).</p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-royal-gold"></div>
+                    <div class="text-xs font-mono text-royal-gold">2000 — 2002</div>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="bio_4_title">Київський академічний театр юного глядача на Липках</h3>
+                    <p class="text-sm text-slate-300 mt-1" data-i18n="bio_4_desc">Актор театру.</p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-royal-gold"></div>
+                    <div class="text-xs font-mono text-royal-gold">1996 — 2000</div>
+                    <h3 class="text-lg font-semibold text-white" data-i18n="bio_5_title">КНУТКіТ ім. І. К. Карпенка-Карого</h3>
+                    <p class="text-sm text-slate-300 mt-1" data-i18n="bio_5_desc">Факультет театрального мистецтва, спеціальність: актор драми та кіно (диплом з відзнакою).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакти та Соцмережі -->
+    <footer id="contacts" class="py-20 bg-royal-950 border-t border-royal-gold/20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
+            <span class="text-xs uppercase tracking-widest text-royal-gold font-semibold" data-i18n="contact_kicker">Співпраця</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white" data-i18n="contact_title">На зв'язку</h2>
+            <p class="text-slate-300 max-w-xl mx-auto" data-i18n="contact_desc">
+                Відкритий до пропозицій щодо зйомок у кіно, серіалах, рекламі, а також студійного озвучування та дубляжу. Волонтерські та військові проєкти — Pro Bono.
+            </p>
+
+            <!-- Окремі кнопки прямого зв'язку: Email, Telegram, WhatsApp -->
+            <div class="pt-4 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <a href="mailto:Radziviliuk.D@gmail.com?subject=%D0%A1%D0%BF%D1%96%D0%B2%D0%BF%D1%80%D0%B0%D1%86%D1%8F%20%E2%80%94%20%D0%94%D0%B5%D0%BC'%D1%8F%D0%BD%20%D0%A0%D0%B0%D0%B4%D0%B7%D1%96%D0%B2%D1%96%D0%BB%D1%8E%D0%BA" class="flex flex-col items-center justify-center gap-1.5 px-6 py-4 rounded-xl bg-royal-gold text-royal-950 font-bold hover:bg-royal-goldLight transition shadow-lg shadow-amber-500/15">
+                    <div class="flex items-center gap-2 text-base">
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <span>Email</span>
+                    </div>
+                    <span class="text-xs sm:text-sm font-semibold">Radziviliuk.D@gmail.com</span>
+                </a>
+
+                <a href="https://t.me/DemianRadziviliuk" target="_blank" rel="noopener" class="flex flex-col items-center justify-center gap-1.5 px-6 py-4 rounded-xl bg-royal-800 hover:bg-royal-700 border border-royal-gold/50 text-white font-bold transition shadow-lg">
+                    <div class="flex items-center gap-2 text-base text-royal-gold">
+                        <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        <span>Telegram</span>
+                    </div>
+                    <span class="text-xs sm:text-sm font-semibold text-white">@DemianRadziviliuk</span>
+                </a>
+
+                <a href="https://wa.me/380501337496" target="_blank" rel="noopener" class="flex flex-col items-center justify-center gap-1.5 px-6 py-4 rounded-xl bg-royal-800 hover:bg-royal-700 border border-royal-gold/50 text-white font-bold transition shadow-lg">
+                    <div class="flex items-center gap-2 text-base text-royal-gold">
+                        <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/></svg>
+                        <span>WhatsApp</span>
+                    </div>
+                    <span class="text-xs sm:text-sm font-semibold text-white">+380501337496 @DemianRadziviliuk</span>
+                </a>
+            </div>
+
+            <!-- Соцмережі -->
+            <div id="social-links" class="pt-10 scroll-mt-24">
+                <div class="text-xs uppercase tracking-widest text-royal-gold font-semibold mb-4" data-i18n="socials_section_title">Соцмережі</div>
+                <div class="flex flex-wrap justify-center gap-3 text-sm">
+                    <a href="https://www.youtube.com/c/DemyanRadzivilyukBrandVoiceSTB" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-lg glass-card hover:border-royal-gold/50 text-slate-200 hover:text-white transition">YouTube</a>
+                    <a href="https://soundcloud.com/demyan-radzivilyuk/taras-shevchenko-mertvim-zhivim-nenarodzhenim-zemlyakam-mom-v-ukran-ne-v-ukran" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-lg glass-card hover:border-royal-gold/50 text-slate-200 hover:text-white transition">SoundCloud</a>
+                    <a href="https://www.instagram.com/radziviliuk.demian/" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-lg glass-card hover:border-royal-gold/50 text-slate-200 hover:text-white transition">Instagram</a>
+                    <a href="https://www.facebook.com/radziviliuk.d" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-lg glass-card hover:border-royal-gold/50 text-slate-200 hover:text-white transition">Facebook</a>
+                    <a href="https://www.linkedin.com/in/radziviliukd/" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-lg glass-card hover:border-royal-gold/50 text-slate-200 hover:text-white transition">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="pt-10 text-xs text-slate-400" data-i18n="footer_copy">
+                © 2026 Дем'ян Радзівілюк (Demian Radziviliuk). Усі права захищено.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальне вікно перегляду фотографій (Lightbox) -->
+    <div id="lightbox" onclick="closeLightbox()" class="fixed inset-0 z-50 hidden bg-royal-950/90 backdrop-blur-md flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-slate-300 hover:text-white text-3xl leading-none" aria-label="Close">&times;</button>
+        <div onclick="event.stopPropagation()" class="max-w-3xl max-h-[90vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="" class="max-h-[80vh] w-auto rounded-xl border border-royal-gold/30 shadow-2xl">
+            <p id="lightbox-caption" class="text-sm text-slate-200 mt-4 font-medium"></p>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            uk: {
+                page_title: "Дем'ян Радзівілюк — Актор кіно та театру, Диктор, Брендголос",
+                brand_first: "Дем'ян",
+                brand_last: "Радзівілюк",
+                nav_params: "Параметри",
+                nav_gallery: "Фото",
+                nav_media: "Портфоліо та ЗСУ",
+                nav_filmography: "Фільмографія",
+                nav_bio: "Біографія",
+                nav_socials: "Соцмережі",
+                nav_contacts: "Контакти",
+                hero_location: "Київ, Україна",
+                hero_role_tag: "Актор / Диктор",
+                hero_first_name: "Дем'ян",
+                hero_last_name: "Радзівілюк",
+                hero_subtitle: "Професійний актор кіно та театру, артист озвучування й дубляжу. З 2002 року і дотепер — ексклюзивний брендовий голос телеканалу <strong class=\"text-white font-medium\">СТБ</strong> та головних флагманських шоу країни (\"Х-Фактор\", \"Україна має талант\", \"Танцюють всі!\", \"Зважені та щасливі\"...).",
+                hero_btn_demo: "Слухати приклади робіт",
+                hero_btn_zsu: "Pro Bono для ЗСУ та волонтерів",
+                photo_placeholder_title: "Місце для основного портрету",
+                photo_placeholder_desc: "Покладіть ваше фото поруч із файлом сайту та назвіть його <code class=\"text-royal-gold\">photo.jpg</code>",
+                params_title: "Акторські параметри та навички",
+                params_subtitle: "Актуальні дані для кастинг-директорів та продакшнів",
+                param_dob_label: "Дата народження",
+                param_height_label: "Зріст",
+                param_height_val: "174 см",
+                param_weight_label: "Вага",
+                param_weight_val: "78 кг",
+                param_eyes_label: "Очі",
+                param_eyes_val: "Карі",
+                param_hair_label: "Волосся",
+                param_hair_val: "Шатен з сивиною",
+                lang_section_label: "Володіння мовами:",
+                lang_uk: "Українська — рідна",
+                lang_en: "Англійська — розмовна",
+                lang_ru: "Російська — досконало <span class=\"text-royal-gold\">*</span>",
+                lang_ru_note: "<span class=\"text-royal-gold font-semibold uppercase tracking-wider mr-1\">* Примітка щодо мови:</span> Робота російською мовою можлива <strong class=\"text-white underline decoration-royal-gold/70 underline-offset-4\">виключно для створення спеціальних характерних образів (ролі росіян)</strong> в українських чи міжнародних проєктах — <strong class=\"text-white\">без участі в російськомовних проєктах для російськомовної аудиторії</strong>.",
+                skills_label: "Спеціальні навички:",
+                skill_driving: "Водіння авто (механіка / автомат, кат. «B»)",
+                skill_combat: "Сценічний бій",
+                skill_fencing: "Фехтування",
+                skill_piano: "Гра на фортепіано",
+                skill_swimming: "Плавання",
+                gallery_kicker: "Акторське портфоліо",
+                gallery_title: "Хедшоти та кадри зі зйомок",
+                gallery_hint: "Натисніть на кнопку вище, щоб відкрити повну галерею світлин на сайті, або оберіть фото нижче",
+                gal_ph_1: "Великий план (нейтральний)",
+                gal_ov_1: "Хедшот • Великий план",
+                gal_cap_1: "Основний акторський хедшот",
+                gal_ph_2: "Діловий / статусний образ",
+                gal_ov_2: "Типаж • Бізнес / Керівник",
+                gal_cap_2: "Діловий / статусний типаж",
+                gal_ph_3: "Характерний / драматичний образ",
+                gal_ov_3: "Типаж • Драма / Характер",
+                gal_cap_3: "Характерний / драматичний портрет",
+                gal_ph_4: "Кадр зі зйомок у кіно",
+                gal_ov_4: "Знімальний майданчик",
+                gal_cap_4: "Кадр зі зйомок у кіно",
+                gal_ph_5: "Озвучування та дубляж",
+                gal_ov_5: "Студія • Озвучування",
+                gal_cap_5: "Студія звукозапису — робота біля мікрофона",
+                gal_ph_6: "Повний зріст / Smart Casual",
+                gal_ov_6: "Повний зріст • Smart Casual",
+                gal_cap_6: "Повний зріст / Вільний стиль",
+                media_title: "Портфоліо професійного актора. Озвучування і дубляж",
+                cat_zsu_badge: "PRO BONO • БЕЗКОШТОВНО",
+                cat_zsu_title: "Озвучування для ЗСУ та волонтерів",
+                cat_zsu_desc: "Озвучування роликів для підрозділів Збройних Сил України, благодійних фондів та волонтерських зборів виконую <strong class=\"text-royal-gold\">абсолютно безкоштовно (Pro Bono)</strong>. Якщо ви готуєте відео для підтримки війська — сміливо звертайтеся по допомогу.",
+                cat_zsu_btn: "Приклади робіт для ЗСУ",
+                cat_zsu_contact: "Написати в Telegram →",
+                cat_stb_badge: "Brand Voice STB",
+                cat_stb_title: "Промо телеканалу СТБ",
+                cat_stb_desc: "Фірмові анонси та проморолики головних національних телепроєктів («Україна має талант», «Зважені та щасливі», «Х-фактор», «МастерШеф» та ін.).",
+                cat_stb_btn: "Переглянути промо СТБ",
+                cat_com_badge: "Бренди та бізнес",
+                cat_com_title: "Комерційна реклама",
+                cat_com_desc: "Іміджеві та продуктові відеоролики для телебачення і діджитал-платформ.",
+                cat_com_btn: "Переглянути комерційну рекламу",
+                cat_soc_badge: "Суспільні проєкти",
+                cat_soc_title: "Соціальна реклама",
+                cat_soc_desc: "Державні інформаційні кампанії, гуманітарні ініціативи, культурні та соціально важливі відеопроєкти.",
+                cat_soc_btn: "Переглянути соціальну рекламу",
+                cat_prog_badge: "Телевізійні та документальні проєкти",
+                cat_prog_title: "Озвучування програм",
+                cat_prog_desc: "Закадровий голос культових реаліті-шоу, документальних циклів та розважальних програм: \"МастерШеф\", \"Танці з зірками (СТБ)\", \"Битва екстрасенсів\", \"Слідство ведуть екстрасенси\", \"Неймовірна правда про зірок (Перші сезони)\", \"У пошуках істини\", \"Документальний детектив\", \"Документальний блокбастер\", \"Звана вечеря\", \"Фермер шукає дружину\", \"Кулінарна династія\", \"Кохана, ми вбиваємо дітей\", \"Вагітна в 16\", \"Лід та полум'я\", \"Моя правда (Перші сезони)\", \"Правила життя\", \"Живе кіно\" — у плейлисті на YouTube.",
+                cat_prog_btn: "Дивитися плейлист програм",
+                audio_tag: "Художнє читання / Голос",
+                audio_title: "Тарас Шевченко — «І мертвим, і живим, і ненарожденним...»",
+                audio_meta: "Студійний запис • Українська мова",
+                audio_link: "Відкрити у SoundCloud →",
+                film_kicker: "Кіно та серіали",
+                film_title: "Вибрана фільмографія",
+                film_1_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2023</span><span class=\"text-white font-semibold text-lg\">т/с «Жіночий лікар»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Павло</strong></span>",
+                film_1_right: "Реж. П. Мащенко • «1+1 Україна»",
+                film_2_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2023</span><span class=\"text-white font-semibold text-lg\">т/с «Коло омани»</span>",
+                film_2_right: "Реж. О. Тіменко, Д. Лактіонов • «1+1 Україна»",
+                film_3_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2021</span><span class=\"text-white font-semibold text-lg\">х/ф «Білий ворон»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Оператор «Горлівка-ТБ»</strong></span>",
+                film_3_right: "Реж. Мар'ян Бушан • UM-Group",
+                film_4_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2021</span><span class=\"text-white font-semibold text-lg\">т/с «Ангели-2»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Терорист Маркус</strong></span>",
+                film_4_right: "Реж. Тарас Рибальченко • SFERA FILM",
+                film_5_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2021</span><span class=\"text-white font-semibold text-lg\">т/с «Кріпосна 3»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Розпорядник балу</strong></span>",
+                film_6_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2021</span><span class=\"text-white font-semibold text-lg\">т/с «Пес-6» (серія «Вендетта»)</span>",
+                film_6_right: "«Вікторія-універсал Продакшн» • ICTV",
+                film_7_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2020</span><span class=\"text-white font-semibold text-lg\">т/с «Жіночий лікар 5»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Бізнесмен</strong></span>",
+                film_7_right: "Реж. Павло Мащенко • FILM.UA",
+                film_8_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2020</span><span class=\"text-white font-semibold text-lg\">т/с «Акушерка»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Анестезіолог</strong></span>",
+                film_9_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2019</span><span class=\"text-white font-semibold text-lg\">т/с «Мишоловка для кота»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Айтішник-хакер «Ботан»</strong></span>",
+                film_10_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2019</span><span class=\"text-white font-semibold text-lg\">т/с «Папік»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Лікар</strong></span>",
+                film_11_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2019</span><span class=\"text-white font-semibold text-lg\">т/с «Сидоренки-Сидоренки»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Ведучий підпільного аукціону</strong></span>",
+                film_12_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2018</span><span class=\"text-white font-semibold text-lg\">т/с «Кріпосна»</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— роль: <strong class=\"text-white font-medium\">Розпорядник аукціону</strong></span>",
+                bio_kicker: "Професійний шлях",
+                bio_title: "Освіта та Досвід",
+                bio_1_date: "2018 — дотепер",
+                bio_1_title: "Актор кіно та телесеріалів",
+                bio_1_desc: "Активна робота у повнометражному кіно, телевізійних серіалах та національних рекламних кампаніях.",
+                bio_2_title: "Майстер-клас Іванни Чаббак",
+                bio_2_desc: "Інтенсив за технікою провідного голлівудського коуча («The Power of the Actor: The Chubbuck Technique»).",
+                bio_3_date: "2002 — дотепер",
+                bio_3_title: "Телеканал СТБ",
+                bio_3_desc: "Ексклюзивний брендовий голос каналу, диктор промо та флагманських телевізійних шоу («Україна має талант», «Зважені та щасливі» та ін.).",
+                bio_4_title: "Київський академічний театр юного глядача на Липках",
+                bio_4_desc: "Актор театру.",
+                bio_5_title: "КНУТКіТ ім. І. К. Карпенка-Карого",
+                bio_5_desc: "Факультет театрального мистецтва, спеціальність: актор драми та кіно (диплом з відзнакою).",
+                contact_kicker: "Співпраця",
+                contact_title: "На зв'язку",
+                contact_desc: "Відкритий до пропозицій щодо зйомок у кіно, серіалах, рекламі, а також студійного озвучування та дубляжу. Волонтерські та військові проєкти — Pro Bono.",
+                socials_section_title: "Соцмережі",
+                footer_copy: "© 2026 Дем'ян Радзівілюк (Demian Radziviliuk). Усі права захищено."
+            },
+            en: {
+                page_title: "Demian Radziviliuk — Film & Theatre Actor, Voiceover Artist, Brand Voice",
+                brand_first: "Demian",
+                brand_last: "Radziviliuk",
+                nav_params: "Specs",
+                nav_gallery: "Photos",
+                nav_media: "Portfolio & UAF",
+                nav_filmography: "Filmography",
+                nav_bio: "Bio",
+                nav_socials: "Socials",
+                nav_contacts: "Contact",
+                hero_location: "Kyiv, Ukraine",
+                hero_role_tag: "Actor / Voiceover Artist",
+                hero_first_name: "Demian",
+                hero_last_name: "Radziviliuk",
+                hero_subtitle: "Professional film and theatre actor, voiceover and dubbing artist. Exclusive official brand voice of <strong class=\"text-white font-medium\">STB</strong> television network and major national prime-time shows (The X Factor, Ukraine's Got Talent, So You Think You Can Dance!, The Biggest Loser...) since 2002.",
+                hero_btn_demo: "Explore Voice & Video Samples",
+                hero_btn_zsu: "Pro Bono for Ukrainian Army & Volunteers",
+                photo_placeholder_title: "Main Portrait Placeholder",
+                photo_placeholder_desc: "Place your headshot next to the HTML file and name it <code class=\"text-royal-gold\">photo.jpg</code>",
+                params_title: "Actor Specifications & Skills",
+                params_subtitle: "Up-to-date casting data for casting directors and production companies",
+                param_dob_label: "Date of Birth",
+                param_height_label: "Height",
+                param_height_val: "174 cm (5'8.5\")",
+                param_weight_label: "Weight",
+                param_weight_val: "78 kg (172 lbs)",
+                param_eyes_label: "Eyes",
+                param_eyes_val: "Brown",
+                param_hair_label: "Hair",
+                param_hair_val: "Salt & Pepper Brown",
+                lang_section_label: "Languages:",
+                lang_uk: "Ukrainian — Native",
+                lang_en: "English — Conversational",
+                lang_ru: "Russian — Fluent <span class=\"text-royal-gold\">*</span>",
+                lang_ru_note: "<span class=\"text-royal-gold font-semibold uppercase tracking-wider mr-1\">* Language Policy Note:</span> Performing in Russian is available <strong class=\"text-white underline decoration-royal-gold/70 underline-offset-4\">strictly for portraying specific character roles (Russian characters)</strong> within Ukrainian or international productions — <strong class=\"text-white\">strictly no participation in Russian-language projects aimed at Russian-speaking markets</strong>.",
+                skills_label: "Special Skills:",
+                skill_driving: "Driving (Manual & Automatic, Cat. B)",
+                skill_combat: "Stage Combat",
+                skill_fencing: "Fencing",
+                skill_piano: "Piano",
+                skill_swimming: "Swimming",
+                gallery_kicker: "Actor Portfolio",
+                gallery_title: "Headshots & On-Set Stills",
+                gallery_hint: "Click the button above to open the full photo gallery on this site or select a still below",
+                gal_ph_1: "Close-up Headshot (Neutral)",
+                gal_ov_1: "Headshot • Close-Up",
+                gal_cap_1: "Primary Actor Headshot",
+                gal_ph_2: "Business / Executive Type",
+                gal_ov_2: "Character Type • Executive",
+                gal_cap_2: "Business / Executive Character Type",
+                gal_ph_3: "Dramatic / Character Portrait",
+                gal_ov_3: "Character Type • Drama",
+                gal_cap_3: "Dramatic / Character Portrait",
+                gal_ph_4: "Film Set Still",
+                gal_ov_4: "On Set • Film Production",
+                gal_cap_4: "On-Set Film Still",
+                gal_ph_5: "Voiceover & Dubbing Studio",
+                gal_ov_5: "Studio • Voice Acting",
+                gal_cap_5: "Recording Studio — Behind the Mic",
+                gal_ph_6: "Full Body / Smart Casual",
+                gal_ov_6: "Full Body • Smart Casual",
+                gal_cap_6: "Full Body / Smart Casual",
+                media_title: "Professional Actor Portfolio. Voiceover & Dubbing",
+                cat_zsu_badge: "PRO BONO • FREE OF CHARGE",
+                cat_zsu_title: "Armed Forces of Ukraine & Volunteers",
+                cat_zsu_desc: "Voiceover recording for units of the Armed Forces of Ukraine, charity foundations, and volunteer fundraisers is provided <strong class=\"text-royal-gold\">100% free of charge (Pro Bono)</strong>. If you are producing a video supporting Ukraine's defenders, feel free to reach out.",
+                cat_zsu_btn: "Watch UAF Volunteer Samples",
+                cat_zsu_contact: "Message on Telegram →",
+                cat_stb_badge: "Brand Voice STB",
+                cat_stb_title: "STB TV Network Promos",
+                cat_stb_desc: "Signature network promos and trailers for flagship national television franchises (Ukraine's Got Talent, The Biggest Loser, The X Factor, MasterChef, etc.).",
+                cat_stb_btn: "Browse STB Network Promos",
+                cat_com_badge: "Brands & Business",
+                cat_com_title: "Commercial Advertising",
+                cat_com_desc: "Brand image and product commercials for television and digital platforms.",
+                cat_com_btn: "Browse Commercial Ads",
+                cat_soc_badge: "Public Campaigns",
+                cat_soc_title: "Social Advertising (PSA)",
+                cat_soc_desc: "National awareness campaigns, humanitarian initiatives, cultural and socially impactful video projects.",
+                cat_soc_btn: "Browse Social Commercials",
+                cat_prog_badge: "TV Shows & Documentaries",
+                cat_prog_title: "TV Program Narration",
+                cat_prog_desc: "Voiceover narration for iconic reality franchises, documentary series, and entertainment shows: MasterChef, Dancing with the Stars (STB), Psychic Challenge, Investigation Led by Psychics, Incredible Truth About Stars (Early Seasons), In Search of Truth, Documentary Detective, Documentary Blockbuster, Come Dine with Me, Farmer Wants a Wife, Culinary Dynasty, Honey, We're Killing the Kids, 16 and Pregnant, Ice and Flame, My Truth (Early Seasons), Rules of Life, Living Cinema — on YouTube playlist.",
+                cat_prog_btn: "Watch TV Shows Playlist",
+                audio_tag: "Dramatic Reading / Voice",
+                audio_title: "Taras Shevchenko — \"To the Dead, the Living, and the Unborn...\"",
+                audio_meta: "Studio Recording • Ukrainian",
+                audio_link: "Open on SoundCloud →",
+                film_kicker: "Film & Television",
+                film_title: "Selected Filmography",
+                film_1_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2023</span><span class=\"text-white font-semibold text-lg\">TV Series \"Women's Doctor\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">Pavlo</strong></span>",
+                film_1_right: "Dir. P. Mashchenko • 1+1 Ukraine",
+                film_2_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2023</span><span class=\"text-white font-semibold text-lg\">TV Series \"Circle of Deception\"</span>",
+                film_2_right: "Dir. O. Timenko, D. Laktionov • 1+1 Ukraine",
+                film_3_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2021</span><span class=\"text-white font-semibold text-lg\">Feature Film \"Sniper. The White Raven\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">Horlivka-TV Cameraman</strong></span>",
+                film_3_right: "Dir. Marian Bushan • UM-Group",
+                film_4_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2021</span><span class=\"text-white font-semibold text-lg\">TV Series \"Angels 2\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">Terrorist Markus</strong></span>",
+                film_4_right: "Dir. Taras Rybalchenko • SFERA FILM",
+                film_5_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2021</span><span class=\"text-white font-semibold text-lg\">TV Series \"Love in Chains 3\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">Master of Ceremonies</strong></span>",
+                film_6_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2021</span><span class=\"text-white font-semibold text-lg\">TV Series \"The Dog 6\" (Ep. \"Vendetta\")</span>",
+                film_6_right: "Victoria-Universal Production • ICTV",
+                film_7_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2020</span><span class=\"text-white font-semibold text-lg\">TV Series \"Women's Doctor 5\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">Businessman</strong></span>",
+                film_7_right: "Dir. Pavlo Mashchenko • FILM.UA",
+                film_8_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2020</span><span class=\"text-white font-semibold text-lg\">TV Series \"The Midwife\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">Anesthesiologist</strong></span>",
+                film_9_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2019</span><span class=\"text-white font-semibold text-lg\">TV Series \"Mousetrap for a Cat\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">IT Hacker \"Botan\"</strong></span>",
+                film_10_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2019</span><span class=\"text-white font-semibold text-lg\">TV Series \"Papik\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">Doctor</strong></span>",
+                film_11_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2019</span><span class=\"text-white font-semibold text-lg\">TV Series \"Sydorenky-Sydorenky\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">Underground Auctioneer</strong></span>",
+                film_12_left: "<span class=\"text-royal-gold font-mono text-sm font-semibold mr-3\">2018</span><span class=\"text-white font-semibold text-lg\">TV Series \"Love in Chains\"</span><span class=\"text-slate-300 text-sm block sm:inline sm:ml-2\">— Role: <strong class=\"text-white font-medium\">Auctioneer</strong></span>",
+                bio_kicker: "Career Path",
+                bio_title: "Education & Experience",
+                bio_1_date: "2018 — Present",
+                bio_1_title: "Film & Television Actor",
+                bio_1_desc: "Active roles in feature films, television series, and national commercial campaigns.",
+                bio_2_title: "Ivana Chubbuck Acting Masterclass",
+                bio_2_desc: "Intensive training in the Chubbuck Technique (\"The Power of the Actor\").",
+                bio_3_date: "2002 — Present",
+                bio_3_title: "STB Television Network",
+                bio_3_desc: "Exclusive channel brand voice, promo announcer, and voice of flagship prime-time shows (Ukraine's Got Talent, The Biggest Loser, etc.).",
+                bio_4_title: "Kyiv Academic Theatre on Lypky",
+                bio_4_desc: "Stage Actor.",
+                bio_5_title: "Kyiv National I. K. Karpenko-Kary Theatre, Cinema and Television University",
+                bio_5_desc: "Faculty of Theatre Arts, Major: Drama & Film Acting (Graduated with Honors).",
+                contact_kicker: "Booking & Inquiries",
+                contact_title: "Get in Touch",
+                contact_desc: "Available for film, television, commercial acting roles, as well as studio voiceover and dubbing projects. Military & volunteer initiatives — Pro Bono.",
+                socials_section_title: "Social Networks",
+                footer_copy: "© 2026 Demian Radziviliuk. All rights reserved."
+            }
+        };
+
+        let currentLang = 'uk';
+        let currentLightboxKey = null;
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('actor_site_lang', lang);
+            document.documentElement.lang = lang;
+            document.title = translations[lang].page_title;
+
+            const btnUk = document.getElementById('btn-lang-uk');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (lang === 'uk') {
+                btnUk.className = "px-2 py-1 rounded-full text-xs font-bold transition bg-royal-gold text-royal-950";
+                btnEn.className = "px-2 py-1 rounded-full text-xs font-bold transition text-slate-300 hover:text-white";
+            } else {
+                btnEn.className = "px-2 py-1 rounded-full text-xs font-bold transition bg-royal-gold text-royal-950";
+                btnUk.className = "px-2 py-1 rounded-full text-xs font-bold transition text-slate-300 hover:text-white";
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key] !== undefined) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            if (currentLightboxKey && translations[lang][currentLightboxKey]) {
+                document.getElementById('lightbox-caption').textContent = translations[lang][currentLightboxKey];
+            }
+        }
+
+        function openLightbox(src, captionKey) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            currentLightboxKey = captionKey;
+            img.src = src;
+            cap.textContent = translations[currentLang][captionKey] || captionKey;
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            currentLightboxKey = null;
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        const savedLang = localStorage.getItem('actor_site_lang');
+        if (savedLang && (savedLang === 'uk' || savedLang === 'en')) {
+            setLanguage(savedLang);
+        }
+    </script>
+
+</body>
+</html>

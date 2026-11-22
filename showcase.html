@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфоліо — Дем'ян Радзівілюк</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royal: {
+                            950: '#050b1a',
+                            900: '#0a1633',
+                            800: '#10224d',
+                            700: '#18316e',
+                            gold: '#d4af37',
+                            goldLight: '#f5d77f',
+                            muted: '#94a3b8'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050b1a;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(16, 34, 77, 0.55);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+        }
+        .preview-progress {
+            transition: width 5s linear;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col selection:bg-royal-gold selection:text-royal-950">
+
+    <!-- Верхня панель навігації -->
+    <header class="sticky top-0 z-40 glass-card border-b border-royal-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+            <a href="index.html" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-royal-800 hover:bg-royal-700 border border-royal-gold/40 text-white text-xs sm:text-sm font-semibold transition">
+                <svg class="w-4 h-4 text-royal-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span id="back-btn-text">На головну</span>
+            </a>
+
+            <a href="index.html" class="font-serif text-sm sm:text-base font-bold tracking-wider uppercase text-white">
+                <span id="brand-first">Дем'ян</span> <span class="text-royal-gold" id="brand-last">Радзівілюк</span>
+            </a>
+
+            <div class="inline-flex items-center p-0.5 rounded-full bg-royal-950/90 border border-royal-gold/30">
+                <button type="button" id="btn-lang-uk" onclick="setLanguage('uk')" class="px-2.5 py-1 rounded-full text-xs font-bold transition bg-royal-gold text-royal-950">UA</button>
+                <button type="button" id="btn-lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-full text-xs font-bold transition text-slate-300 hover:text-white">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Заголовок розділу та вкладки швидкого переходу -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-14">
+        <div class="mb-8">
+            <span id="section-kicker" class="text-xs uppercase tracking-widest text-royal-gold font-semibold">Архів робіт</span>
+            <h1 id="section-title" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-1.5">Завантаження...</h1>
+            <p id="section-desc" class="text-sm sm:text-base text-slate-300 mt-3 max-w-3xl"></p>
+        </div>
+
+        <!-- Вкладки між розділами -->
+        <div class="flex flex-wrap gap-2 mb-10 pb-4 border-b border-royal-gold/15" id="section-tabs">
+            <a href="showcase.html?section=photos" data-sec="photos" class="tab-link px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border transition">Фото та хедшоти</a>
+            <a href="showcase.html?section=zsu" data-sec="zsu" class="tab-link px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border transition">Для ЗСУ (Pro Bono)</a>
+            <a href="showcase.html?section=stb" data-sec="stb" class="tab-link px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border transition">Промо СТБ</a>
+            <a href="showcase.html?section=commercial" data-sec="commercial" class="tab-link px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border transition">Комерційна реклама</a>
+            <a href="showcase.html?section=social" data-sec="social" class="tab-link px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border transition">Соціальна реклама</a>
+        </div>
+
+        <!-- Індикатор завантаження -->
+        <div id="loader" class="py-20 flex flex-col items-center justify-center text-center space-y-4">
+            <div class="w-12 h-12 border-4 border-royal-gold/30 border-t-royal-gold rounded-full animate-spin"></div>
+            <p id="loader-text" class="text-sm text-slate-300">Отримуємо актуальні файли з портфоліо...</p>
+        </div>
+
+        <!-- Повідомлення про помилку або порожню папку -->
+        <div id="empty-state" class="hidden py-16 text-center glass-card rounded-2xl p-8 max-w-xl mx-auto">
+            <p id="empty-text" class="text-slate-200 text-base"></p>
+        </div>
+
+        <!-- Сітка медіафайлів -->
+        <div id="media-grid" class="grid gap-6"></div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="py-8 border-t border-royal-gold/15 text-center text-xs text-slate-400">
+        © 2026 Дем'ян Радзівілюк (Demian Radziviliuk)
+    </footer>
+
+    <!-- Повноекранний перегляд (Lightbox) -->
+    <div id="lightbox" onclick="closeLightbox()" class="fixed inset-0 z-50 hidden bg-royal-950/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-6">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-royal-800/80 border border-royal-gold/40 text-white hover:text-royal-gold text-2xl flex items-center justify-center z-20" aria-label="Close">&times;</button>
+        
+        <!-- Стрілка вліво -->
+        <button id="lb-prev" onclick="event.stopPropagation(); navigateLightbox(-1)" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-royal-900/90 border border-royal-gold/40 text-white hover:bg-royal-gold hover:text-royal-950 flex items-center justify-center transition z-20" aria-label="Previous">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+
+        <!-- Контент лайтбоксу -->
+        <div onclick="event.stopPropagation()" class="w-full max-w-5xl flex flex-col items-center">
+            <div id="lb-media-container" class="w-full flex items-center justify-center"></div>
+            <div class="mt-4 flex items-center justify-between w-full max-w-3xl px-2">
+                <p id="lb-title" class="text-sm sm:text-base text-white font-medium truncate"></p>
+                <span id="lb-counter" class="text-xs text-royal-gold font-mono shrink-0 ml-4"></span>
+            </div>
+        </div>
+
+        <!-- Стрілка вправо -->
+        <button id="lb-next" onclick="event.stopPropagation(); navigateLightbox(1)" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-royal-900/90 border border-royal-gold/40 text-white hover:bg-royal-gold hover:text-royal-950 flex items-center justify-center transition z-20" aria-label="Next">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+    </div>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzVsiokyGz6y7rqTa27hHLWMYgiQq-ZKKcm0_bGN5GvE2PuFKZA6Jb4AZxWSv8vJ41vIw/exec";
+
+        const SECTION_META = {
+            uk: {
+                back: "На головну",
+                brandFirst: "Дем'ян",
+                brandLast: "Радзівілюк",
+                loader: "Отримуємо актуальні файли з портфоліо...",
+                empty: "У цьому розділі поки що немає файлів або триває оновлення.",
+                hintVideo: "Наведіть курсор для 5-сек. прев'ю • Натисніть для повного перегляду",
+                hintPhoto: "Натисніть для перегляду в повному розмірі",
+                tabs: {
+                    photos: "Фото та хедшоти",
+                    zsu: "Для ЗСУ (Pro Bono)",
+                    stb: "Промо СТБ",
+                    commercial: "Комерційна реклама",
+                    social: "Соціальна реклама"
+                },
+                sections: {
+                    photos: {
+                        kicker: "Акторське портфоліо",
+                        title: "Хедшоти та кадри зі зйомок",
+                        desc: "Актуальні студійні портрети, характерні образи та робочі моменти зі знімального майданчика."
+                    },
+                    zsu: {
+                        kicker: "PRO BONO • Підтримка війська",
+                        title: "Озвучування для ЗСУ та волонтерів",
+                        desc: "Офіційні ролики підрозділів, благодійних фондів та волонтерських ініціатив."
+                    },
+                    stb: {
+                        kicker: "Brand Voice STB",
+                        title: "Промо телеканалу СТБ",
+                        desc: "Фірмові телевізійні анонси та проморолики головних національних проєктів."
+                    },
+                    commercial: {
+                        kicker: "Бренди та бізнес",
+                        title: "Комерційна реклама",
+                        desc: "Іміджеві та продуктові рекламні ролики для телебачення і діджитал-медіа."
+                    },
+                    social: {
+                        kicker: "Суспільні кампанії",
+                        title: "Соціальна реклама",
+                        desc: "Державні, культурні та гуманітарні інформаційні відеопроєкти."
+                    }
+                }
+            },
+            en: {
+                back: "Back to Home",
+                brandFirst: "Demian",
+                brandLast: "Radziviliuk",
+                loader: "Loading portfolio files...",
+                empty: "No files found in this section yet.",
+                hintVideo: "Hover for 5s preview • Click for full screen",
+                hintPhoto: "Click to view full size",
+                tabs: {
+                    photos: "Photos & Headshots",
+                    zsu: "UAF (Pro Bono)",
+                    stb: "STB Network Promos",
+                    commercial: "Commercial Ads",
+                    social: "Social Ads (PSA)"
+                },
+                sections: {
+                    photos: {
+                        kicker: "Actor Portfolio",
+                        title: "Headshots & On-Set Stills",
+                        desc: "Studio headshots, character portraits, and behind-the-scenes stills."
+                    },
+                    zsu: {
+                        kicker: "PRO BONO • Supporting Ukraine",
+                        title: "Armed Forces of Ukraine & Volunteers",
+                        desc: "Voiceover promos for military units, charity foundations, and volunteer fundraisers."
+                    },
+                    stb: {
+                        kicker: "Brand Voice STB",
+                        title: "STB TV Network Promos",
+                        desc: "Signature network promos and trailers for flagship national television shows."
+                    },
+                    commercial: {
+                        kicker: "Brands & Business",
+                        title: "Commercial Advertising",
+                        desc: "Brand image and product commercials for TV and digital platforms."
+                    },
+                    social: {
+                        kicker: "Public Campaigns",
+                        title: "Social Advertising (PSA)",
+                        desc: "National awareness, cultural, and humanitarian video campaigns."
+                    }
+                }
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentSection = SECTION_META.uk.sections[urlParams.get('section')] ? urlParams.get('section') : 'photos';
+        let currentLang = localStorage.getItem('actor_site_lang') === 'en' ? 'en' : 'uk';
+        let portfolioItems = [];
+        let currentIndex = 0;
+
+        function applyTranslations() {
+            const t = SECTION_META[currentLang];
+            const sec = t.sections[currentSection];
+
+            document.documentElement.lang = currentLang;
+            document.title = `${sec.title} — ${t.brandFirst} ${t.brandLast}`;
+            document.getElementById('back-btn-text').textContent = t.back;
+            document.getElementById('brand-first').textContent = t.brandFirst;
+            document.getElementById('brand-last').textContent = t.brandLast;
+            document.getElementById('loader-text').textContent = t.loader;
+            document.getElementById('empty-text').textContent = t.empty;
+
+            document.getElementById('section-kicker').textContent = sec.kicker;
+            document.getElementById('section-title').textContent = sec.title;
+            document.getElementById('section-desc').textContent = sec.desc;
+
+            const btnUk = document.getElementById('btn-lang-uk');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (currentLang === 'uk') {
+                btnUk.className = "px-2.5 py-1 rounded-full text-xs font-bold transition bg-royal-gold text-royal-950";
+                btnEn.className = "px-2.5 py-1 rounded-full text-xs font-bold transition text-slate-300 hover:text-white";
+            } else {
+                btnEn.className = "px-2.5 py-1 rounded-full text-xs font-bold transition bg-royal-gold text-royal-950";
+                btnUk.className = "px-2.5 py-1 rounded-full text-xs font-bold transition text-slate-300 hover:text-white";
+            }
+
+            document.querySelectorAll('.tab-link').forEach(link => {
+                const s = link.getAttribute('data-sec');
+                link.textContent = t.tabs[s];
+                if (s === currentSection) {
+                    link.className = "tab-link px-4 py-2 rounded-full text-xs sm:text-sm font-bold border bg-royal-gold text-royal-950 border-royal-gold shadow-md shadow-amber-500/15";
+                } else {
+                    link.className = "tab-link px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border bg-royal-900/70 text-slate-200 border-royal-gold/25 hover:border-royal-gold/60 transition";
+                }
+            });
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('actor_site_lang', lang);
+            applyTranslations();
+            if (portfolioItems.length) renderGrid();
+        }
+
+        async function loadPortfolio() {
+            applyTranslations();
+            const grid = document.getElementById('media-grid');
+            grid.className = currentSection === 'photos'
+                ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6";
+
+            try {
+                const response = await fetch(`${SCRIPT_URL}?section=${encodeURIComponent(currentSection)}`);
+                const data = await response.json();
+                document.getElementById('loader').classList.add('hidden');
+
+                if (!data.items || data.items.length === 0) {
+                    document.getElementById('empty-state').classList.remove('hidden');
+                    return;
+                }
+
+                portfolioItems = data.items;
+                renderGrid();
+            } catch (err) {
+                document.getElementById('loader').classList.add('hidden');
+                document.getElementById('empty-state').classList.remove('hidden');
+            }
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('media-grid');
+            const t = SECTION_META[currentLang];
+            grid.innerHTML = '';
+
+            portfolioItems.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.onclick = () => openLightbox(index);
+
+                if (item.type === 'image') {
+                    card.className = "group relative aspect-[3/4] rounded-2xl overflow-hidden bg-royal-900 border border-royal-gold/25 hover:border-royal-gold/60 cursor-pointer transition shadow-lg";
+                    card.innerHTML = `
+                        <img src="${item.thumb}" alt="${escapeHtml(item.name)}" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-royal-950/95 via-royal-950/60 to-transparent opacity-0 group-hover:opacity-100 transition">
+                            <p class="text-sm font-semibold text-white truncate">${escapeHtml(item.name)}</p>
+                            <span class="text-xs text-royal-gold">${t.hintPhoto}</span>
+                        </div>
+                    `;
+                } else {
+                    card.className = "group glass-card rounded-2xl overflow-hidden border border-royal-gold/25 hover:border-royal-gold/70 cursor-pointer transition flex flex-col shadow-lg";
+                    card.innerHTML = `
+                        <div class="relative aspect-video bg-royal-950 overflow-hidden">
+                            <img src="${item.thumb}" alt="${escapeHtml(item.name)}" loading="lazy" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                            <video muted playsinline preload="none" class="preview-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 pointer-events-none"></video>
+                            
+                            <!-- Іконка Play та бейдж 5s preview -->
+                            <div class="play-overlay absolute inset-0 bg-royal-950/35 flex items-center justify-center transition-opacity duration-300">
+                                <div class="w-14 h-14 rounded-full bg-royal-gold/95 text-royal-950 flex items-center justify-center shadow-xl group-hover:scale-110 transition">
+                                    <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+
+                            <span class="preview-badge absolute top-3 right-3 px-2.5 py-1 rounded-md bg-royal-950/85 border border-royal-gold/40 text-[11px] font-semibold text-royal-gold">
+                                5s PREVIEW
+                            </span>
+
+                            <!-- Шкала 5-секундного прев'ю -->
+                            <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
+                                <div class="preview-bar h-full w-0 bg-royal-gold"></div>
+                            </div>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <h3 class="text-sm sm:text-base font-semibold text-white group-hover:text-royal-gold transition line-clamp-2">${escapeHtml(item.name)}</h3>
+                            <p class="text-xs text-slate-400 mt-2">${t.hintVideo}</p>
+                        </div>
+                    `;
+
+                    // Логіка 5-секундного динамічного прев'ю при наведенні
+                    let previewTimer = null;
+                    const videoEl = card.querySelector('.preview-video');
+                    const playOverlay = card.querySelector('.play-overlay');
+                    const barEl = card.querySelector('.preview-bar');
+
+                    const startPreview = () => {
+                        if (!videoEl.src) {
+                            videoEl.src = item.streamUrl;
+                        }
+                        videoEl.currentTime = 0;
+                        const playPromise = videoEl.play();
+                        if (playPromise !== undefined) {
+                            playPromise.then(() => {
+                                videoEl.classList.remove('opacity-0');
+                                playOverlay.classList.add('opacity-0');
+                                barEl.style.transition = 'none';
+                                barEl.style.width = '0%';
+                                requestAnimationFrame(() => {
+                                    barEl.style.transition = 'width 5s linear';
+                                    barEl.style.width = '100%';
+                                });
+
+                                clearTimeout(previewTimer);
+                                previewTimer = setTimeout(() => {
+                                    videoEl.currentTime = 0;
+                                    barEl.style.transition = 'none';
+                                    barEl.style.width = '0%';
+                                    requestAnimationFrame(() => {
+                                        barEl.style.transition = 'width 5s linear';
+                                        barEl.style.width = '100%';
+                                    });
+                                }, 5000);
+                            }).catch(() => {});
+                        }
+                    };
+
+                    const stopPreview = () => {
+                        clearTimeout(previewTimer);
+                        videoEl.pause();
+                        videoEl.classList.add('opacity-0');
+                        playOverlay.classList.remove('opacity-0');
+                        barEl.style.transition = 'none';
+                        barEl.style.width = '0%';
+                    };
+
+                    card.addEventListener('mouseenter', startPreview);
+                    card.addEventListener('mouseleave', stopPreview);
+                }
+
+                grid.appendChild(card);
+            });
+        }
+
+        function openLightbox(index) {
+            currentIndex = index;
+            const item = portfolioItems[index];
+            const container = document.getElementById('lb-media-container');
+            const titleEl = document.getElementById('lb-title');
+            const counterEl = document.getElementById('lb-counter');
+
+            titleEl.textContent = item.name;
+            counterEl.textContent = `${index + 1} / ${portfolioItems.length}`;
+
+            if (item.type === 'image') {
+                container.innerHTML = `<img src="${item.full}" alt="${escapeHtml(item.name)}" class="max-h-[82vh] w-auto rounded-xl border border-royal-gold/30 shadow-2xl">`;
+            } else {
+                container.innerHTML = `
+                    <div class="w-full aspect-video max-h-[80vh] rounded-xl overflow-hidden border border-royal-gold/40 bg-black shadow-2xl">
+                        <iframe src="${item.embedUrl}" class="w-full h-full" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                `;
+            }
+
+            document.getElementById('lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.getElementById('lb-media-container').innerHTML = '';
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(step) {
+            if (!portfolioItems.length) return;
+            const nextIndex = (currentIndex + step + portfolioItems.length) % portfolioItems.length;
+            openLightbox(nextIndex);
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+        }
+
+        document.addEventListener('keydown', e => {
+            if (document.getElementById('lightbox').classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        });
+
+        loadPortfolio();
+    </script>
+</body>
+</html>
